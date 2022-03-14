@@ -1,0 +1,58 @@
+digraph
+{
+    label="main(...) in main.cpp";
+    labelloc=top;
+
+    // A4 paper size
+    size="11.7,8.27";
+
+    // process nodes
+    node [shape = box]
+        parseCommandline [label="Parse command line arguments"];
+        reserveMemory [label="Reserve and initialize memory for arguments structure"];
+        acceptArgs [label="Accept arguments and check validity"];
+        argVersion [label="ARG-'VERSION'"];
+        argHelp [label="ARG-'HELP'"];
+        printVersion [label="Print version"];
+        printHelp [label="Print usage instruction"];
+        fillArgs [label="Fill args into Arg structure"];
+        consoleInitialization [label="Console initialization"];
+        printArgs [label="Print out accepted arguments"];
+        updateFirmware [label="Update firmware, keep return value"];
+        cleanConsole [label="Clean console"];
+
+    // decision nodes
+    node [shape="diamond"]
+        argumentUnknown [label="Is argument\n unknown?"];
+        checkArgumentsOK [label="Check parsing\n arguments. OK?"];
+        updateFirmwareOK [label="Update firmware\n OK?"];
+
+
+    // entry point
+    start [shape="box", style=rounded, label="Start"];
+    error [shape="box", style=rounded, label="Error"];
+    end   [shape="box", style=rounded, label="End"];
+    UpdateFirmware   [shape="box", style=rounded, label="UpdateFirmware(...)"];
+
+    // ranks
+
+    // connections
+    start -> parseCommandline -> reserveMemory -> acceptArgs;
+    acceptArgs -> argVersion -> printVersion -> checkArgumentsOK;
+    acceptArgs -> argHelp -> printHelp -> checkArgumentsOK;
+    acceptArgs -> argumentUnknown;
+
+    argumentUnknown -> printHelp [ label="yes" ];
+    argumentUnknown -> fillArgs [ label="no" ];
+
+    fillArgs -> checkArgumentsOK;
+
+    checkArgumentsOK -> error [ label="no" ] ;
+    checkArgumentsOK -> consoleInitialization [ label="yes" ] ;
+
+    consoleInitialization -> printArgs -> updateFirmware -> UpdateFirmware -> cleanConsole -> updateFirmwareOK;
+
+    updateFirmwareOK -> end [ label="yes" ];
+    updateFirmwareOK -> error [ label="no" ];
+
+}

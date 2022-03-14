@@ -1,0 +1,47 @@
+var platform_8h =
+[
+    [ "SER_HANDLE_s", "struct_s_e_r___h_a_n_d_l_e__s.html", "struct_s_e_r___h_a_n_d_l_e__s" ],
+    [ "BaudrateDefaultI2C", "platform_8h.html#a3929e9f36e79265486c0cecdefcd6bb7", null ],
+    [ "ENABLE_AARDVARK_SUPPORT", "platform_8h.html#a0e237a70322005e8537951fd21a65bf2", null ],
+    [ "ENABLE_NET_SUPPORT", "platform_8h.html#a9c1095ba7cee9729613cfffdc76e2c93", null ],
+    [ "SER_HANDLE_pt", "platform_8h.html#a896cb12578c27fe9c8a789aa1268a183", null ],
+    [ "SER_HANDLE_t", "platform_8h.html#ad36af6e58581955afe679e17693325e2", null ],
+    [ "SER_TYPE_t", "platform_8h.html#ac53e3d3a51d87f15422f4395ae21b6eb", null ],
+    [ "MSG_LEVEL", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333", [
+      [ "MSG_ERR", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333af369b3edb73a3b6e9ec208dc312f9bd6", null ],
+      [ "MSG_WARN", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333a26744ba2d7512da500888e67b798e085", null ],
+      [ "MSG_LEV0", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333a8a58ddd9346f76e629a18f2a2053fd72", null ],
+      [ "MSG_LEV1", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333ad15c1443fc0b119d1d19ce1612a6834a", null ],
+      [ "MSG_LEV2", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333aadaa5a3fb3415c5881e70c7f762f8dd7", null ],
+      [ "MSG_DBG", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333ad2103d9025b58432b1f33d48d87d2ec8", null ],
+      [ "MSG_DBGV", "platform_8h.html#a10cd4539bac4c67d55db0fa42b4a2333a7f39c2ec2750428d110ee6710393bd49", null ]
+    ] ],
+    [ "SER_TYPE_e", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715", [
+      [ "COM", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715aaaabad2553753eb2aceaa31ab2ad3d72", null ],
+      [ "STDINOUT", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715a65b68191746c21e2a5bbf14b6e136e50", null ],
+      [ "U2C", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715a80a52530ffc5495036f051c6dacc0589", null ],
+      [ "I2C", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715a999bae3da733e2c2015a4585271b0187", null ],
+      [ "SPI", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715aefea9eb0772378037221a3f1fe759a76", null ],
+      [ "SPU", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715a3357e9402f2015c36fc2630ae2f362c5", null ],
+      [ "NET", "platform_8h.html#ab9d4b9f3543e79a75bbdf769b36a7715a09c331e69591a2470471d457a17b413c", null ]
+    ] ],
+    [ "CONSOLE_DONE", "platform_8h.html#a921926b19165f392893df0fde378ae07", null ],
+    [ "CONSOLE_INIT", "platform_8h.html#a7d38348525c2d88f56b48e4a5651ca7e", null ],
+    [ "CONSOLE_RESTORE_POS", "platform_8h.html#ad2d7907cbda0a549b4528eda3eafd9b3", null ],
+    [ "CONSOLE_SAVE_POS", "platform_8h.html#a21076b28b74288670cab46657b3146d9", null ],
+    [ "MESSAGE", "platform_8h.html#a893956021e39f080363c13adeea56462", null ],
+    [ "MESSAGE_PLAIN", "platform_8h.html#a591fafe6c761800ebd98e966554b06c8", null ],
+    [ "SER_BAUDRATE", "platform_8h.html#a0bd48bf54d90db186ed99af32867d4d1", null ],
+    [ "SER_CLEAR", "platform_8h.html#a8f881bd325752b018bad46d8784e5ca3", null ],
+    [ "SER_CLOSE", "platform_8h.html#af5f911c31f1f119880f0084789cce208", null ],
+    [ "SER_FLUSH", "platform_8h.html#a4fce3f52692897dcea4bacc4c583e068", null ],
+    [ "SER_OPEN", "platform_8h.html#ac43e63ea80db4ded915c0d4c8c220e20", null ],
+    [ "SER_PENDING", "platform_8h.html#a5aaf4d8c122a220483e50c6e23822088", null ],
+    [ "SER_READ", "platform_8h.html#a549ad074208912281c72d3a13998077a", null ],
+    [ "SER_REENUM", "platform_8h.html#a7a43239a6435efdb8161e14317686ae4", null ],
+    [ "SER_WRITE", "platform_8h.html#ade17901e4ab389b16aa71583ce034133", null ],
+    [ "SER_WRITE_SPI", "platform_8h.html#aa2b3f14215f97c63ee4cdcb4159f3150", null ],
+    [ "TIME_GET", "platform_8h.html#a3de0e43e9e5e923270a3fa4e6a2649fd", null ],
+    [ "TIME_SLEEP", "platform_8h.html#a5d79fbd9882eb3b46b1af202da8b2e21", null ],
+    [ "verbose", "platform_8h.html#a0b2caeb4b6f130be43e5a2f0267dd453", null ]
+];

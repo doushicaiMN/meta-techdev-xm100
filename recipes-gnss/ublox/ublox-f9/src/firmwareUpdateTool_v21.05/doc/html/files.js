@@ -1,0 +1,28 @@
+var files =
+[
+    [ "checksum.c", "checksum_8c.html", "checksum_8c" ],
+    [ "checksum.h", "checksum_8h.html", "checksum_8h" ],
+    [ "flash.c", "flash_8c.html", "flash_8c" ],
+    [ "flash.h", "flash_8h.html", "flash_8h" ],
+    [ "image.c", "image_8c.html", "image_8c" ],
+    [ "image.h", "image_8h.html", "image_8h" ],
+    [ "main.c", "main_8c.html", "main_8c" ],
+    [ "mergefis.c", "mergefis_8c.html", "mergefis_8c" ],
+    [ "mergefis.h", "mergefis_8h.html", "mergefis_8h" ],
+    [ "platform.c", "platform_8c.html", "platform_8c" ],
+    [ "platform.h", "platform_8h.html", "platform_8h" ],
+    [ "receiver.c", "receiver_8c.html", "receiver_8c" ],
+    [ "receiver.h", "receiver_8h.html", "receiver_8h" ],
+    [ "resource.h", "resource_8h.html", "resource_8h" ],
+    [ "spi_read_buffer.h", "spi__read__buffer_8h.html", "spi__read__buffer_8h" ],
+    [ "types.h", "types_8h.html", "types_8h" ],
+    [ "u2cbridge.c", "u2cbridge_8c.html", null ],
+    [ "u2cbridge.h", "u2cbridge_8h.html", null ],
+    [ "ubxmsg.c", "ubxmsg_8c.html", "ubxmsg_8c" ],
+    [ "ubxmsg.h", "ubxmsg_8h.html", "ubxmsg_8h" ],
+    [ "update.c", "update_8c.html", "update_8c" ],
+    [ "update.h", "update_8h.html", "update_8h" ],
+    [ "updateCore.c", "update_core_8c.html", "update_core_8c" ],
+    [ "updateCore.h", "update_core_8h.html", "update_core_8h" ],
+    [ "version.h", "version_8h.html", "version_8h" ]
+];

@@ -1,0 +1,25 @@
+var annotated =
+[
+    [ "APP_UBX_UPD_IMG_PAYLOAD_s", "struct_a_p_p___u_b_x___u_p_d___i_m_g___p_a_y_l_o_a_d__s.html", "struct_a_p_p___u_b_x___u_p_d___i_m_g___p_a_y_l_o_a_d__s" ],
+    [ "ARG_ASSOC_s", "struct_a_r_g___a_s_s_o_c__s.html", "struct_a_r_g___a_s_s_o_c__s" ],
+    [ "BLOCK_ARR_s", "struct_b_l_o_c_k___a_r_r__s.html", "struct_b_l_o_c_k___a_r_r__s" ],
+    [ "BLOCK_DEF_s", "struct_b_l_o_c_k___d_e_f__s.html", "struct_b_l_o_c_k___d_e_f__s" ],
+    [ "CL_ARGUMENTS_s", "struct_c_l___a_r_g_u_m_e_n_t_s__s.html", "struct_c_l___a_r_g_u_m_e_n_t_s__s" ],
+    [ "DRV_SPI_MEM_FIS_s", "struct_d_r_v___s_p_i___m_e_m___f_i_s__s.html", "struct_d_r_v___s_p_i___m_e_m___f_i_s__s" ],
+    [ "DRV_SPI_MEM_INFO_s", "struct_d_r_v___s_p_i___m_e_m___i_n_f_o__s.html", "struct_d_r_v___s_p_i___m_e_m___i_n_f_o__s" ],
+    [ "DRV_SPI_MEM_JEDEC_s", "struct_d_r_v___s_p_i___m_e_m___j_e_d_e_c__s.html", "struct_d_r_v___s_p_i___m_e_m___j_e_d_e_c__s" ],
+    [ "FWFOOTERINFO_u", "struct_f_w_f_o_o_t_e_r_i_n_f_o__u.html", "struct_f_w_f_o_o_t_e_r_i_n_f_o__u" ],
+    [ "FWHEADER_u", "union_f_w_h_e_a_d_e_r__u.html", "union_f_w_h_e_a_d_e_r__u" ],
+    [ "RCV_DATA_t", "struct_r_c_v___d_a_t_a__t.html", "struct_r_c_v___d_a_t_a__t" ],
+    [ "RECEIVEBUF_s", "struct_r_e_c_e_i_v_e_b_u_f__s.html", "struct_r_e_c_e_i_v_e_b_u_f__s" ],
+    [ "SER_HANDLE_s", "struct_s_e_r___h_a_n_d_l_e__s.html", "struct_s_e_r___h_a_n_d_l_e__s" ],
+    [ "SPI_READBUFFER_s", "struct_s_p_i___r_e_a_d_b_u_f_f_e_r__s.html", "struct_s_p_i___r_e_a_d_b_u_f_f_e_r__s" ],
+    [ "UBX_ACK_ACK_s", "struct_u_b_x___a_c_k___a_c_k__s.html", "struct_u_b_x___a_c_k___a_c_k__s" ],
+    [ "UBX_CFG_PRT_s", "struct_u_b_x___c_f_g___p_r_t__s.html", "struct_u_b_x___c_f_g___p_r_t__s" ],
+    [ "UBX_HEAD_s", "struct_u_b_x___h_e_a_d__s.html", "struct_u_b_x___h_e_a_d__s" ],
+    [ "UPD_CORE_t", "struct_u_p_d___c_o_r_e__t.html", "struct_u_p_d___c_o_r_e__t" ],
+    [ "XML_ATTR_t", "struct_x_m_l___a_t_t_r__t.html", "struct_x_m_l___a_t_t_r__t" ],
+    [ "XML_ELEM_s", "struct_x_m_l___e_l_e_m__s.html", "struct_x_m_l___e_l_e_m__s" ],
+    [ "XML_HNDL_t", "struct_x_m_l___h_n_d_l__t.html", "struct_x_m_l___h_n_d_l__t" ],
+    [ "XML_RULE_t", "struct_x_m_l___r_u_l_e__t.html", "struct_x_m_l___r_u_l_e__t" ]
+];

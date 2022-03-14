@@ -1,0 +1,150 @@
+digraph
+{
+    // label
+    label="UpdateFirmware(...) in update.cpp";
+    labelloc="top";
+    fontsize="24";
+
+    // A4 paper size
+    size="11.7,8.27";
+
+    // group firmwareUpdate() function together
+    // subgraph cluster1 {
+        // label="firmwareUpdate(...)";
+        // labelloc=top;
+        // fontsize=24;
+
+    // process nodes
+    node [shape = box]
+        cleanMemory [label="Clean reserved memory\n and return to caller"];
+        fileOpen [label="Open image file\n and load into buffer"];
+        connectReceiver [label="Connect to receiver\n with given baud rate"];
+        extractGenInfo [label="Extract HW\n gen information"];
+        sendSafeboot [label="Send command to Safe Boot\n and re-enumerate USB"];
+        startLoadTask [label="Start load task"];
+        setSaftBootBaud [label="Set Safe Boot baud rate"];
+        sendTraining [label="Send training sequence"];
+        printFail [label="Print FAILED\n reason"];
+        reset [label="Reset/Reboot\n receiver"];
+
+    // decision nodes
+    node [shape="diamond"]
+        eraseOnly [label="EraseOnly\nor FisOnly?"];
+        checkImage [label="Image valid?\n(size, gen, CRC)"];
+        fileOpenOK,
+            connectOK,
+            safebootOK [label="OK?"];
+        checkRom [label="Check ROM?\n size, CRC, version"];
+        compatibleOK [label="FW, HW, ROM\n are compatible?"];
+        updateNeededMagic [label="Check if update needed?\n Magic word"];
+        safebootNeeded [label="Safe Boot needed?"];
+        safebootUSB [label="Update\n over USB?"];
+        identifyFlashOK [label="Identify flash\n loader succeed?"];
+        stopOperationOK [label="Stop operation\n succeed?"];
+        detectFlashOK [label="Detect flash manufacturer,\n ID. OK?"];
+        fisMergeOK [label="Do FIS merging\n load, size, enough info?\nOK?"];
+        updateNeededCRC [label="Check if update needed?\nCRC"];
+        baudrateOK [label="Set update baud\n rate and polling OK?"];
+        patchesSetU7OK [label="Patch fixes gen7\n erase time issue. OK?"];
+        eraseOK [label="Erase OK?\n chip, whole flash, partially"];
+        updateFinished [label="In update Erase/Write\n Sectors loop finished?"];
+        updateOK [label="Update OK?"];
+        patchesDelU7OK [label="Invalidate patch about\n gen7 erase time. OK?"];
+        restartOK [label="Restart receiver if\n image too large. OK?"];
+        writeOK [label="Verify image correctly\n written. OK?"];
+        writeMagicOK [label="Write new magic\n word to flash. OK?"];
+        writeMarkerOK [label="Write marker\n to flash. OK?"];
+
+    // entry point
+    entry [shape="box", style=rounded, label="Entry of UpdateFirmware()"];
+    return[shape="box", style=rounded, label="Return from UpdateFirmware()"];
+
+    // ranks
+    { rank="same"; eraseOnly, fileOpen }
+    { rank="same"; startLoadTask, sendSafeboot }
+    { rank="same"; updateNeededCRC, printFail }
+    { rank="same"; checkRom, compatibleOK, updateNeededMagic }
+    // { rank="same"; baudrateOK, patchesSetU7OK }
+
+    // connections
+    entry -> eraseOnly;
+    cleanMemory -> return;
+    eraseOnly -> fileOpen           [ label = "no" ];
+    eraseOnly -> connectReceiver    [ label = "yes" ];
+    fileOpen -> fileOpenOK;
+    fileOpenOK -> checkImage        [ label = "yes" ];
+    fileOpenOK -> cleanMemory       [ label = "no" ];
+    checkImage -> connectReceiver   [ label = "yes" ];
+    checkImage -> cleanMemory       [ label = "no" ];
+    connectReceiver -> connectOK;
+    connectOK -> extractGenInfo     [ label = "yes" ];
+    connectOK -> cleanMemory        [ label = "no" ];
+    extractGenInfo -> checkRom;
+    checkRom -> cleanMemory         [ label = "no" ];
+    checkRom -> compatibleOK        [ label = "yes" ];
+    compatibleOK -> cleanMemory     [ label = "no" ];
+    compatibleOK -> updateNeededMagic    [ label = "yes" ];
+    updateNeededMagic -> safebootNeeded  [ label = "yes" ];
+    safebootNeeded -> sendSafeboot  [ label = "yes" ];
+    safebootNeeded -> startLoadTask [ label = "no" ];
+    sendSafeboot -> safebootOK;
+    safebootOK -> safebootUSB  [ label = "yes" ];
+    safebootOK -> cleanMemory  [ label = "no" ];
+
+    safebootUSB -> sendTraining  [ label = "yes" ];
+    safebootUSB -> setSaftBootBaud  [ label = "no" ];
+    setSaftBootBaud -> sendTraining;
+
+    startLoadTask -> identifyFlashOK;
+    identifyFlashOK -> cleanMemory     [ label = "no" ];
+    identifyFlashOK -> stopOperationOK [ label = "yes" ];
+
+    stopOperationOK -> cleanMemory     [ label = "no" ];
+    stopOperationOK -> detectFlashOK   [ label = "yes" ];
+
+    sendTraining -> detectFlashOK;
+
+    detectFlashOK -> cleanMemory     [ label = "no" ];
+    detectFlashOK -> fisMergeOK     [ label = "yes" ];
+
+    fisMergeOK -> printFail     [ label = "no" ];
+    fisMergeOK -> updateNeededCRC     [ label = "yes" ];
+    printFail -> cleanMemory;
+
+    updateNeededCRC -> cleanMemory     [ label = "no" ];
+    updateNeededCRC -> baudrateOK     [ label = "yes" ];
+
+    baudrateOK -> cleanMemory     [ label = "no" ];
+    baudrateOK -> patchesSetU7OK     [ label = "yes" ];
+
+    patchesSetU7OK -> cleanMemory     [ label = "no" ];
+    patchesSetU7OK -> eraseOK     [ label = "yes" ];
+
+    eraseOK -> cleanMemory     [ label = "no" ];
+    eraseOK -> updateFinished     [ label = "yes" ];
+
+    updateFinished -> updateFinished     [ label = "no" ];
+    updateFinished -> updateOK     [ label = "yes" ];
+
+    updateOK -> cleanMemory     [ label = "no" ];
+    updateOK -> patchesDelU7OK     [ label = "yes" ];
+
+    patchesDelU7OK -> cleanMemory     [ label = "no" ];
+    patchesDelU7OK -> restartOK     [ label = "yes" ];
+
+    restartOK -> cleanMemory     [ label = "no" ];
+    restartOK -> writeOK     [ label = "yes" ];
+
+    writeOK -> cleanMemory     [ label = "no" ];
+    writeOK -> writeMagicOK     [ label = "yes" ];
+
+    writeMagicOK -> cleanMemory     [ label = "no" ];
+    writeMagicOK -> writeMarkerOK     [ label = "yes" ];
+
+    writeMarkerOK -> cleanMemory     [ label = "no" ];
+    writeMarkerOK -> reset     [ label = "yes" ];
+
+    reset -> cleanMemory;
+
+    // }
+}
