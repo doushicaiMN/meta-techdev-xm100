@@ -7,4 +7,7 @@ DESCRIPTION = "technology development team XM100 image with QT graphical librari
 
 GRAPHICAL_CORE = "qt"
 
-IMAGE_INSTALL += "ublox-f9"
+IMAGE_INSTALL += "\
+    ublox-f9 \
+    nano \
+"
